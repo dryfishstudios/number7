@@ -9,13 +9,15 @@ Template.expenses_today.events({
 	'click #addNewExpense': function(event, template) {
 
 		event.preventDefault();
+
+		$('#addNewExpenseOverlay').removeClass('animated zoomOut');
 		$('#expenses_today_overlay').addClass('animated zoomOut');
 		$("#addNewExpenseOverlay").css({
 			'display': 'block'
-		})
+		});
 		$('#addNewExpenseOverlay').addClass('animated zoomIn');
-		//Router.go('/add');
-		console.log("clicked add new expense");
+		
+		
 	},
 
 	'click #closeAddNewExpense': function(event, template) {
@@ -32,6 +34,7 @@ Template.expenses_today.events({
 
 	'submit #addNewExpenseForm': function(event, template) {
 		event.preventDefault();
+		console.log("Saving Form...");
 		var title = event.target.title.value,
 			cost  = event.target.cost.value,
 			location = event.target.location.value,
@@ -45,7 +48,7 @@ Template.expenses_today.events({
 			category: category,
 			date: date
 		});
-		Router.go('/');
+		
 
 	}
 })
