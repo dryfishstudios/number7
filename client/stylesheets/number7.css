@@ -20,6 +20,72 @@ body, html {
 
 }
 
+.meta-info {
+	background-color: rgba(0,0,0,0.2);
+	padding-top: 30px;
+	padding-bottom: 30px;
+	color: #fff;
+	font-weight: 100;
+}
+
+footer {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	color: #FFF;
+	font-weight: 200;
+}
+
+
+.currency {
+	font-size: 32px;
+}
+
+.brand {
+	margin-top: 60px;
+	margin-bottom: 30px;
+	color: #FFF;
+}
+
+.brand h1 {
+	font-size: 32px;
+}
+
+.brand h1 strong {
+	margin-left: 15px;
+}
+
+.brand h1 > small {
+	color: #FFF;
+	opacity: 0.4;
+	font-size: 20px;
+	margin-top: -50%;
+	line-height: 20px;
+}
+
+#expenses_today_overlay {
+	background-color: #ee544c;
+	height: 100%;
+	overflow: scroll;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+	background-image: -webkit-gradient(linear, left top, right bottom, from(rgb(228, 58, 65)), to(rgb(249, 110, 87)));
+	background-image: -webkit-linear-gradient(left top, rgb(228, 58, 65), rgb(249, 110, 87));
+	background-image: -moz-linear-gradient(left top, rgb(228, 58, 65), rgb(249, 110, 87));
+	background-image: -o-linear-gradient(left top, rgb(228, 58, 65), rgb(249, 110, 87));
+	background-image: -ms-linear-gradient(left top, rgb(228, 58, 65), rgb(249, 110, 87));
+	background-image: linear-gradient(left top, rgb(228, 58, 65), rgb(249, 110, 87));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#e43a41', EndColorStr='#f96e57');
+
+}
+
+#addNewExpenseOverlay {
+	display: none;
+	height: 100%;
+	
+}
+
 header.app_header {
 	font-weight: 300;
 	font-size: 32px;
@@ -27,12 +93,15 @@ header.app_header {
 
 header.app_header h1 {
 	font-size: 64px;
-	font-weight: 300;
+	font-weight: 100;
 }
 
 ul.app_links {
 	margin: 0;
 	padding: 0;
+	margin-top: 40px;
+	margin-bottom: 60px;
+	font-size: 24px;
 
 }
 
@@ -40,24 +109,47 @@ ul.app_links li {
 	display: inline;
 	list-style: none;
 	margin-right: 40px;
+	font-weight: 100;
 
+}
+
+ul.app_links li > a {
+	color: #fff;
+}
+
+ul.app_links li > a:hover {
+	text-decoration: none;
 }
 
 ul.app_links li.active > a {
-	text-decoration: underline !important;
+
+	background-color: #FFF;
+	color: #e2413e;
+	border-radius: 40px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.expenses_list_wrapper {
+	margin-top: 50px;
 }
 
 .expense {
+	border-radius: 10px;
+	padding: 30px;
+	padding-top: 30px;
 	background-color: #F9F9F9;
-	font-weight: 300;
+	font-weight: 100;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	
+	padding-bottom: 60px;
 }
 
-.expense h1 {
-	font-weight: 300;
+.expense h2 {
+	font-weight: 200;
 	margin-top: 0px;
 	margin-bottom: 5px;
 }
