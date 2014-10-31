@@ -18,7 +18,7 @@
 								<div class="col-lg-12">
 									<div class="form-group">
 										<label>What did you spend on?</label>
-										<input type="text" id="title" class="form-control" placeholder="a cab ride?" />	
+										<input type="text" id="title" class="form-control" placeholder="Title" />	
 									</div>
 								</div>
 							</div>
@@ -28,13 +28,13 @@
 									<label>
 										How much did you spend?
 									</label>
-									<input type="number" id="cost" class="form-control" placeholder="4.50" />
+									<input type="number" id="cost" class="form-control" placeholder="Cost" />
 								</div>
 								<div class="col-lg-6">
 									<label>
 										Where did you spend?
 									</label>
-									<input type="text" id="location" class="form-control" placeholder="the local bar..." />
+									<input type="text" id="location" class="form-control" placeholder="Place" />
 								</div>
 							</div> <!-- .row -->
 							<div class="row">
@@ -53,7 +53,6 @@
 								<div class="col-lg-12">
 								<br /><br />
 									<button type="submit" class="btn btn-primary">Save</button>
-									
 								</div>
 							</div>
 						</form>
@@ -100,7 +99,7 @@
 			<div class="col-lg-2">
 				<h6>Total Expenses Today</h6>
 				<div class="currency">
-					${{totalExpenseToday}}
+					${{totalExpensesToday}}
 				</div>
 			</div>
 			<div class="col-lg-2">
@@ -133,13 +132,13 @@
 									{{title}}
 								</h2>
 								<h6>
-									@{{location}}
+									{{location}}
 								</h6>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-lg-12">
-								categories...
+								{{category}}
 							</div>
 						</div>
 					</div>
@@ -150,11 +149,11 @@
 		
 	</section>
 
-	<footer>
+<footer class="meta-info">
  <div class="container">
  	<div class="row">
  		<div class="col-lg-12 text-center">
- 			<span>dryfish_studios</span>
+ 			<span>© Dryfish Studios 2014-15</span>
  		</div>
  	</div>
  </div>
