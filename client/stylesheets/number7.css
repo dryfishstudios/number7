@@ -1,1 +1,67 @@
 /* CSS declarations go here */
+body, html {
+	height: 100%;
+}
+
+.add_new_expense_form_wrapper {
+	width:100%;
+	height: 100%;
+	display: table;
+	position: relative;
+	
+	background-color: #F9F9F9;
+}
+
+.add_new_expense_form {
+	
+	display: table-cell;
+	width: 100%;
+	vertical-align: middle;
+
+}
+
+header.app_header {
+	font-weight: 300;
+	font-size: 32px;
+}
+
+header.app_header h1 {
+	font-size: 64px;
+	font-weight: 300;
+}
+
+ul.app_links {
+	margin: 0;
+	padding: 0;
+
+}
+
+ul.app_links li {
+	display: inline;
+	list-style: none;
+	margin-right: 40px;
+
+}
+
+ul.app_links li.active > a {
+	text-decoration: underline !important;
+}
+
+.expense {
+	background-color: #F9F9F9;
+	font-weight: 300;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.expense h1 {
+	font-weight: 300;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+.cost {
+	font-size: 32px;
+}
