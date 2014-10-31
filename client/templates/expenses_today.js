@@ -1,6 +1,12 @@
 Template.expenses_today.helpers({
 	expenses: function() {
-		return Expenses.find({});
+		return Expenses.find({}, {date: -1});
+	},
+	totalExpenseToday: function() {
+		return 18;
+	},
+	dailyAllowance: function() {
+		return 25;
 	}
 });
 
@@ -36,7 +42,7 @@ Template.expenses_today.events({
 			cost  = event.target.cost.value,
 			location = event.target.location.value,
 			category = event.target.category.value,
-			date = new Date();
+			date = Date.parse(new Date());
 			
 		Expenses.insert({
 			title: title,
@@ -45,7 +51,7 @@ Template.expenses_today.events({
 			category: category,
 			date: date
 		});
-		Router.go('/');
-
+		
+		
 	}
 })
