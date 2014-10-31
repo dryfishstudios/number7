@@ -21,23 +21,24 @@
 	</header>
 
 	<section class="expenses_list_wrapper">
+		{{#each expenses}}
 		<div class="expense">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-2">
 						<div class="cost">
-							$4.50
+							{{cost}}
 						</div>
 					</div>
 					<div class="col-lg-8">
 						<div class="row">
 							<div class="col-lg-12">
-								<h1>Cupcakes & Coffee</h1>
+								<h1>{{title}}</h1>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-lg-6">
-								Location: The Cupcake Factoy
+								Location: {{location}}
 							</div>
 							<div class="col-lg-6">
 								<!-- Put something here -->
@@ -45,40 +46,11 @@
 						</div>
 					</div>
 					<div class="col-lg-2">
-						Category Icon
+						{{category}}
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<div class="expense">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-2">
-						<div class="cost">
-							$11.50
-						</div>
-					</div>
-					<div class="col-lg-8">
-						<div class="row">
-							<div class="col-lg-12">
-								<h1>Cab Ride</h1>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-6">
-								Location: The Cupcake Factoy
-							</div>
-							<div class="col-lg-6">
-								<!-- Put something here -->
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-2">
-						Category Icon
-					</div>
-				</div>
-			</div>
-		</div>
+		{{/each}}
 	</section>
 </template>
