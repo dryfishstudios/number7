@@ -3,7 +3,8 @@ if(!Expenses.find({}).count()) {
 		var cost = 50;
 		var location = 'TheMall';
 		var category = 'Malls';
-		Expenses.insert({title: title, cost: cost, location: location, category: category});
+		var date = new Date();
+		Expenses.insert({title: title, cost: cost, location: location, category: category, date: date});
     }
 if(!Categories.find({}).count()) {
 		var name = 'Malls';
