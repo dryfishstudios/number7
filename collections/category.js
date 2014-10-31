@@ -1,1 +1,0 @@
-var Category = Meteor.collection('category');

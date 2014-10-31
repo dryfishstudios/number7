@@ -1,1 +1,0 @@
-var Expense = Meteor.collection('expense');
