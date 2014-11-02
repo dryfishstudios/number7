@@ -10,25 +10,25 @@ Template.expenses_today.events({
 
 		event.preventDefault();
 
-		$('#addNewExpenseOverlay').removeClass('animated zoomOut');
-		$('#expenses_today_overlay').addClass('animated zoomOut');
+		$('#addNewExpenseOverlay').removeClass('animated fadeOut');
+		$('#expenses_today_overlay').addClass('animated fadeOut');
 		$("#addNewExpenseOverlay").css({
 			'display': 'block'
 		});
-		$('#addNewExpenseOverlay').addClass('animated zoomIn');
+		$('#addNewExpenseOverlay').addClass('animated fadeIn');
 		
 		
 	},
 
 	'click #closeAddNewExpense': function(event, template) {
 
-		$('#addNewExpenseOverlay').removeClass('animated zoomIn');
-		$('#addNewExpenseOverlay').addClass('animated zoomOut');
+		$('#addNewExpenseOverlay').removeClass('animated fadeIn');
+		$('#addNewExpenseOverlay').addClass('animated fadeOut');
 		$("#addNewExpenseOverlay").css({
 			'display': 'none'
 		});
-		$('#expenses_today_overlay').removeClass('animated zoomOut');
-		$('#expenses_today_overlay').addClass('animated zoomIn');
+		$('#expenses_today_overlay').removeClass('animated fadeOut');
+		$('#expenses_today_overlay').addClass('animated fadeIn');
 
 	},
 
