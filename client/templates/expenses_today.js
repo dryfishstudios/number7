@@ -1,5 +1,9 @@
 Template.expenses_today.helpers({
 	expenses: function() {
+		return Expenses.find({}, {sort: {date: -1}});
+	},
+
+	expensesByWeek: function() {
 		return Expenses.find({});
 	}
 });
@@ -9,26 +13,21 @@ Template.expenses_today.events({
 	'click #addNewExpense': function(event, template) {
 
 		event.preventDefault();
-
-		$('#addNewExpenseOverlay').removeClass('animated fadeOut');
-		$('#expenses_today_overlay').addClass('animated fadeOut');
-		$("#addNewExpenseOverlay").css({
-			'display': 'block'
-		});
-		$('#addNewExpenseOverlay').addClass('animated fadeIn');
+		
+		$("#addNewExpenseOverlay").addClass("open");
+		$("#expenses_today_overlay").addClass("overlay-open");
 		
 		
 	},
 
 	'click #closeAddNewExpense': function(event, template) {
 
-		$('#addNewExpenseOverlay').removeClass('animated fadeIn');
-		$('#addNewExpenseOverlay').addClass('animated fadeOut');
-		$("#addNewExpenseOverlay").css({
-			'display': 'none'
-		});
-		$('#expenses_today_overlay').removeClass('animated fadeOut');
-		$('#expenses_today_overlay').addClass('animated fadeIn');
+			
+
+			$("#addNewExpenseOverlay").removeClass("open");
+			$("#expenses_today_overlay").removeClass("overlay-open");
+			$("#addNewExpenseOverlay").addClass("close");
+			$("#addNewExpenseOverlay").removeClass("close");
 
 	},
 
@@ -48,7 +47,19 @@ Template.expenses_today.events({
 			category: category,
 			date: date
 		});
+
+		$("#addNewExpenseOverlay").removeClass("open");
+		$("#expenses_today_overlay").removeClass("overlay-open");
+		$("#addNewExpenseOverlay").addClass("close");
+		$("#addNewExpenseOverlay").removeClass("close");
 		
+
+	},
+
+	'click #thisWeekFilter':function(event, template) {
+		
+		event.preventDefault();
+		console.log("Filter by week...");
 
 	}
 })
