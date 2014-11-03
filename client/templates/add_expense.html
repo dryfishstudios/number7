@@ -26,28 +26,58 @@
 							
 								<div class="row">
 									<div class="col-lg-6">
-										<label>
-											How much did you spend?
-										</label>
-										<input type="number" id="cost" class="form-control" placeholder="4.50" />
+										<div class="form-group">
+											<label>
+												How much did you spend?
+											</label>
+											<input type="number" id="cost" class="form-control" placeholder="4.50" min="0" max="9999" step="0.10" size="4" />
+										</div>
 									</div>
 									<div class="col-lg-6">
-										<label>
-											Where did you spend?
-										</label>
-										<input type="text" id="location" class="form-control" placeholder="the local bar..." />
+										<div class="form-group">
+											<label>
+												Where did you spend?
+											</label>
+											<input type="text" id="location" class="form-control" placeholder="the local bar..." />
+										</div>
 									</div>
 								</div> <!-- .row -->
 								<div class="row">
 									<div class="col-lg-12">
-										<label>
-											What kind of activity is it?
-										</label>
-										<select class="form-control" id="category">
-											<option value="1">Beer</option>
-											<option value="2">Credit</option>
-											<option value="3">Pizza</option>
-										</select>
+										<div class="form-group">
+										<label>Select Category</label>
+										<br />
+										</div>
+										<div class="form-group">
+											
+											<label class="radio-inline ice-cream">
+												<input type="radio" name="category" id="category" value="1" />
+												<span class="radio_caption">Food</span>
+											</label>
+
+											<label class="radio-inline theatre">
+												<input type="radio" name="category" id="category" value="2" />
+												<span class="radio_caption">Movies</span>
+											</label>
+
+											<label class="radio-inline vespa">
+												<input type="radio" name="category" id="category" value="3" />
+												<span class="radio_caption">Transport</span>
+											</label>
+
+											<label class="radio-inline passport">
+												<input type="radio" name="category" id="category" value="4" />
+												<span class="radio_caption">Travel</span>
+											</label>
+
+											<label class="radio-inline bill">
+												<input type="radio" name="category" id="category" value="5" />
+												<span class="radio_caption">Misc.</span>
+											</label>
+										
+										</div>
+
+
 									</div>
 								</div> <!-- .row -->
 								<div class="row">
