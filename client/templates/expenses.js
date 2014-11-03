@@ -1,14 +1,28 @@
-Template.expenses_today.helpers({
+Template.expenses.helpers({
 	expenses: function() {
 		return Expenses.find({}, {sort: {date: -1}});
 	},
-
+	expensesToday: function() {
+			var expenses = Expenses.find({});
+			var expensesToday = 0;
+			expenses.forEach(function(expense) {
+				var todaysDate = new Date();
+				if(expense.date.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {
+					expensesToday += parseInt(expense.cost);
+				}
+			});
+			console.log(expensesToday);
+			return expensesToday.toFixed(2);
+	},
 	expensesByWeek: function() {
 		return Expenses.find({});
+	},
+	dailyAllowance: function() {
+			return parseInt("25").toFixed(2);
 	}
 });
 
-Template.expenses_today.events({
+Template.expenses.events({
 
 	'click #addNewExpense': function(event, template) {
 
@@ -42,7 +56,7 @@ Template.expenses_today.events({
 			
 		Expenses.insert({
 			title: title,
-			cost: cost,
+			cost: parseInt(cost).toFixed(2),
 			location: location,
 			category: category,
 			date: date
@@ -53,13 +67,34 @@ Template.expenses_today.events({
 		$("#addNewExpenseOverlay").addClass("close");
 		$("#addNewExpenseOverlay").removeClass("close");
 		
+		// Clear Fields
+		$('#title').val('');
+		$('#cost').val('');
+		$('#location').val('');
+		$('input[name=category]').attr('checked', false);
 
 	},
-
-	'click #thisWeekFilter':function(event, template) {
-		
+	
+	'click #expensesToday': function(event, template) {
+		console.log("Expenses Today");
 		event.preventDefault();
-		console.log("Filter by week...");
+		$('a').removeClass('active');
+		$(event.target).addClass('active');
+	},
 
+	'click #expensesThisWeek':function(event, template) {
+		
+		console.log("Weekly Expenses");
+		event.preventDefault();
+		$('a').removeClass('active');
+		$(event.target).addClass('active');
+
+	},
+	
+	'click #expensesThisMonth': function(event, template) {
+		console.log("Expenses This Month");
+		event.preventDefault();
+		$('a').removeClass('active');
+		$(event.target).addClass('active');
 	}
 })
