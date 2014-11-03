@@ -103,7 +103,7 @@ ul.app_links li > a:hover {
 	text-decoration: none;
 }
 
-ul.app_links li > a.active {
+ul.app_links li.active > a {
 
 	background-color: #FFF;
 	color: #e2413e;
