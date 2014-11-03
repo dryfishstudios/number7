@@ -90,13 +90,15 @@ ul.app_links {
 ul.app_links li {
 	display: inline;
 	list-style: none;
-	margin-right: 40px;
+	
 	font-weight: 100;
 
 }
 
 ul.app_links li > a {
 	color: #fff;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
 ul.app_links li > a:hover {
