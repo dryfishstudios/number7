@@ -1,3 +1,19 @@
+var subscriptionHandler = false;
+function handleExpenses(time) {
+	expensesHandler = Meteor.subscribe('expenses', time);
+	if(subscriptionHandler)
+		subscriptionHandler.stop();
+	subscriptionHandler = expensesHandler;
+}
+
+function clearAddExpenseFields() {
+	// Clear Fields
+	$('#title').val('');
+	$('#cost').val('');
+	$('#location').val('');
+	$('input[name=category]').attr('checked', false);
+}
+
 Template.expenses.helpers({
 	expenses: function() {
 		return Expenses.find({}, {sort: {date: -1}});
@@ -14,8 +30,13 @@ Template.expenses.helpers({
 			console.log(expensesToday);
 			return expensesToday.toFixed(2);
 	},
-	expensesByWeek: function() {
-		return Expenses.find({});
+	expensesThisWeek: function() {
+		handleExpenses('weekly');
+		return Expenses.find({}).count();
+	},
+	expensesThisMonth: function() {
+		handleExpenses('monthly');
+		console.log(Expenses.find({}).count());
 	},
 	dailyAllowance: function() {
 			return parseInt("25").toFixed(2);
@@ -42,6 +63,8 @@ Template.expenses.events({
 			$("#expenses_today_overlay").removeClass("overlay-open");
 			$("#addNewExpenseOverlay").addClass("close");
 			$("#addNewExpenseOverlay").removeClass("close");
+			
+			clearAddExpenseFields();
 
 	},
 
@@ -67,11 +90,7 @@ Template.expenses.events({
 		$("#addNewExpenseOverlay").addClass("close");
 		$("#addNewExpenseOverlay").removeClass("close");
 		
-		// Clear Fields
-		$('#title').val('');
-		$('#cost').val('');
-		$('#location').val('');
-		$('input[name=category]').attr('checked', false);
+		clearAddExpenseFields();
 
 	},
 	
@@ -80,15 +99,15 @@ Template.expenses.events({
 		event.preventDefault();
 		$('li').removeClass('active');
 		$(event.target).parent().addClass('active');
+		handleExpenses('daily');
 	},
 
 	'click #expensesThisWeek':function(event, template) {
-		
 		console.log("Weekly Expenses");
 		event.preventDefault();
 		$('li').removeClass('active');
 		$(event.target).parent().addClass('active');
-
+		handleExpenses('weekly');
 	},
 	
 	'click #expensesThisMonth': function(event, template) {
@@ -96,5 +115,6 @@ Template.expenses.events({
 		event.preventDefault();
 		$('li').removeClass('active');
 		$(event.target).parent().addClass('active');
+		handleExpenses('monthly');
 	}
 })
