@@ -78,23 +78,23 @@ Template.expenses.events({
 	'click #expensesToday': function(event, template) {
 		console.log("Expenses Today");
 		event.preventDefault();
-		$('a').removeClass('active');
-		$(event.target).addClass('active');
+		$('li').removeClass('active');
+		$(event.target).parent().addClass('active');
 	},
 
 	'click #expensesThisWeek':function(event, template) {
 		
 		console.log("Weekly Expenses");
 		event.preventDefault();
-		$('a').removeClass('active');
-		$(event.target).addClass('active');
+		$('li').removeClass('active');
+		$(event.target).parent().addClass('active');
 
 	},
 	
 	'click #expensesThisMonth': function(event, template) {
 		console.log("Expenses This Month");
 		event.preventDefault();
-		$('a').removeClass('active');
-		$(event.target).addClass('active');
+		$('li').removeClass('active');
+		$(event.target).parent().addClass('active');
 	}
 })
