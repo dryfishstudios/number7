@@ -1,13 +1,15 @@
+// Handle Subscriptions
 var subscriptionHandler = false;
 function handleExpenses(time) {
-	expensesHandler = Meteor.subscribe('expenses', time);
 	if(subscriptionHandler)
 		subscriptionHandler.stop();
+	expensesHandler = Meteor.subscribe('expenses', time);
 	subscriptionHandler = expensesHandler;
+	return Expenses.find({});
 }
 
+// Clear Fields
 function clearAddExpenseFields() {
-	// Clear Fields
 	$('#title').val('');
 	$('#cost').val('');
 	$('#location').val('');
@@ -44,33 +46,20 @@ Template.expenses.helpers({
 });
 
 Template.expenses.events({
-
 	'click #addNewExpense': function(event, template) {
-
 		event.preventDefault();
-		
 		$("#addNewExpenseOverlay").addClass("open");
 		$("#expenses_today_overlay").addClass("overlay-open");
-		
-		
 	},
-
 	'click #closeAddNewExpense': function(event, template) {
-
-			
-
 			$("#addNewExpenseOverlay").removeClass("open");
 			$("#expenses_today_overlay").removeClass("overlay-open");
 			$("#addNewExpenseOverlay").addClass("close");
-			$("#addNewExpenseOverlay").removeClass("close");
-			
+			$("#addNewExpenseOverlay").removeClass("close");	
 			clearAddExpenseFields();
-
 	},
-
 	'submit #addNewExpenseForm': function(event, template) {
 		event.preventDefault();
-		console.log("Saving Form...");
 		var title = event.target.title.value,
 			cost  = event.target.cost.value,
 			location = event.target.location.value,
@@ -89,32 +78,30 @@ Template.expenses.events({
 		$("#expenses_today_overlay").removeClass("overlay-open");
 		$("#addNewExpenseOverlay").addClass("close");
 		$("#addNewExpenseOverlay").removeClass("close");
-		
 		clearAddExpenseFields();
-
 	},
-	
 	'click #expensesToday': function(event, template) {
 		console.log("Expenses Today");
 		event.preventDefault();
 		$('li').removeClass('active');
 		$(event.target).parent().addClass('active');
 		handleExpenses('daily');
+		console.log(Expenses.find({}).fetch());
+		// template.$('#totalExpenses').html('$343.00');
 	},
-
 	'click #expensesThisWeek':function(event, template) {
 		console.log("Weekly Expenses");
 		event.preventDefault();
 		$('li').removeClass('active');
 		$(event.target).parent().addClass('active');
 		handleExpenses('weekly');
-	},
-	
+	},	
 	'click #expensesThisMonth': function(event, template) {
 		console.log("Expenses This Month");
 		event.preventDefault();
 		$('li').removeClass('active');
 		$(event.target).parent().addClass('active');
-		handleExpenses('monthly');
+		expenses = handleExpenses('monthly');
+		console.log(expenses.fetch())
 	}
 })

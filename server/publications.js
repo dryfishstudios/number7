@@ -16,7 +16,6 @@ Meteor.publish('expenses', function(frequency) {
 	if(frequency == 'daily') {
 		start = new Date(year, month, date-1, 23, 59, 59);
 		end = new Date(year, month, date+1);
-		return Expenses.find({ date: { $gt: start, $lt: end}});
 	}
 	else if(frequency == 'weekly') {
 		monday = getMonday(today);
@@ -25,11 +24,11 @@ Meteor.publish('expenses', function(frequency) {
 		mondayDate = monday.getDate();
 		start = new Date(monday.setHours(00,00,00));
 		end = new Date(mondayYear, mondayMonth, mondayDate + 6)
-		return Expenses.find({ date: { $gt: start, $lt: end }});
 	}
 	else if(frequency == 'monthly') {
 		start = new Date(year, month, 1);
 		end = new Date(year, month, 31);
-		return Expenses.find({ date: { $gt: start, $lt: end}});
 	}
+	
+	return Expenses.find({ date: { $gt: start, $lt: end }});
 })
