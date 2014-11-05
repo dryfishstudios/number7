@@ -1,0 +1,107 @@
+label.radio-inline.ice-cream {
+	background: url(/images/icons/icecream.png) no-repeat center center;
+	width: 100px;
+	height: 150px;
+}
+
+label.radio-inline.theatre {
+	background: url(/images/icons/theatre.png) no-repeat center center;
+	width: 100px;
+	height: 150px;
+}
+
+label.radio-inline.vespa {
+	background: url(/images/icons/vespa.png) no-repeat center center;
+	width: 100px;
+	height: 150px;
+}
+
+label.radio-inline.passport {
+	background: url(/images/icons/passport.png) no-repeat center center;
+	width: 100px;
+	height: 150px;
+}
+
+label.radio-inline.bill {
+	background: url(/images/icons/bill.png) no-repeat center center;
+	width: 100px;
+	height: 150px;
+}
+
+label.radio-inline {
+	
+	padding-left: 0px;
+	margin-right: 30px;
+}
+
+label input[type="radio"] {
+	display: none;
+
+}
+
+label span.radio_caption {
+	display: block;
+	text-align: center;
+	font-weight: 400;
+	margin-bottom: 30px;
+}
+
+
+
+input[type="radio"]:checked +  span.radio_caption {
+	font-weight: 700;
+}
+
+
+.form-group label {
+	font-size: 18px;
+	font-weight: 200;
+}
+
+.form-control {
+	background: none;
+	border: none;
+	box-shadow: none;
+	font-size: 32px;
+	height: 52px;
+	line-height: 52px;
+	outline: none;
+
+}
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {   
+border-color: none;
+box-shadow: none;
+outline: none;}
+
+#addNewExpenseForm h1 {
+	font-weight: 200;
+}
+
+#closeAddNewExpense {
+	font-size: 16px;
+}
+
+
+.btn {
+	border-radius: 40px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border:none;
+}
+
+.btn-primary {
+	font-size: 18px;;
+	text-transform: uppercase;
+	background-color: #575757;
+
+}
+
+.btn-primary:hover {
+	background-color: #E03D3D;
+}
+
+
+

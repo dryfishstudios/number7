@@ -1,0 +1,104 @@
+<template name="expenses">
+	<div id="expenses_today_overlay">
+		<header class="app_header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="brand">
+							<h1>
+								number<strong>7</strong>
+								<small>simple expense manager built on meteor.</small>
+							</h1>
+						</div>
+					
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<ul class="app_links">
+
+							<li class="active"><a href="#" id="expensesToday" >Today</a></li>
+
+							
+
+							<li><a href="#" id="expensesThisWeek">This Week</a></li>
+							<li><a href="#" id="expensesThisMonth">This Month</a></li>
+							<li class="pull-right"><a href="#" id="addNewExpense">Add New Expense</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<section class="meta-info">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2">
+						<h6>Total Expenses Today</h6>
+						<div id="totalExpenses" class="currency">
+							${{expensesToday}}
+						</div>
+					</div>
+					<div class="col-lg-2">
+						<h6>Daily Allowance</h6>
+						<div class="currency">
+							${{dailyAllowance}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="expenses_list_wrapper">
+			<div class="container">
+				<div class="row">
+				{{#each expenses}}
+					<div class="col-md-4">
+						<div class="expense">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="currency">
+										${{cost}}
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<h2>
+										{{title}}
+									</h2>
+									<h6>
+										{{location}}
+									</h6>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									{{category}}
+								</div>
+							</div>
+						</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</section>
+
+		<footer>
+ 			<div class="container">
+ 				<div class="row">
+ 					<div class="col-lg-12 text-center">
+ 						<span>© Dryfish Studios 2014-15</span>
+ 					</div>
+ 				</div>
+ 			</div>
+ 		</footer>
+
+	</div>
+
+
+
+	{{> addExpense}}
+ 
+</template>

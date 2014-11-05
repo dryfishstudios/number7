@@ -1,6 +1,7 @@
 /* CSS declarations go here */
 body, html {
 	height: 100%;
+	background: #000;
 }
 
 .add_new_expense_form_wrapper {
@@ -8,8 +9,8 @@ body, html {
 	height: 100%;
 	display: table;
 	position: relative;
+	background-color: rgba(242, 242, 241, 0.95);
 	
-	background-color: #F9F9F9;
 }
 
 .add_new_expense_form {
@@ -29,6 +30,7 @@ body, html {
 }
 
 footer {
+	background-color: rgba(0,0,0,0.2);
 	padding-top: 30px;
 	padding-bottom: 30px;
 	color: #FFF;
@@ -62,29 +64,9 @@ footer {
 	line-height: 20px;
 }
 
-#expenses_today_overlay {
-	background-color: #ee544c;
-	height: 100%;
-	overflow: scroll;
-	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-	background-image: -webkit-gradient(linear, left top, right bottom, from(rgb(228, 58, 65)), to(rgb(249, 110, 87)));
-	background-image: -webkit-linear-gradient(left top, rgb(228, 58, 65), rgb(249, 110, 87));
-	background-image: -moz-linear-gradient(left top, rgb(228, 58, 65), rgb(249, 110, 87));
-	background-image: -o-linear-gradient(left top, rgb(228, 58, 65), rgb(249, 110, 87));
-	background-image: -ms-linear-gradient(left top, rgb(228, 58, 65), rgb(249, 110, 87));
-	background-image: linear-gradient(left top, rgb(228, 58, 65), rgb(249, 110, 87));
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#e43a41', EndColorStr='#f96e57');
 
-}
 
-#addNewExpenseOverlay {
-	display: none;
-	height: 100%;
-	
-}
+
 
 header.app_header {
 	font-weight: 300;
@@ -108,13 +90,15 @@ ul.app_links {
 ul.app_links li {
 	display: inline;
 	list-style: none;
-	margin-right: 40px;
+	
 	font-weight: 100;
 
 }
 
 ul.app_links li > a {
 	color: #fff;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
 ul.app_links li > a:hover {
